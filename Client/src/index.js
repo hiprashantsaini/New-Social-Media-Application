@@ -25,7 +25,7 @@ const PublicRoute = () => {
 
   const getUserProfile = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/auth/profile", { withCredentials: true });
+      const res = await axios.get("https://new-social-media-application.onrender.com/api/auth/profile", { withCredentials: true });
       if (res) {
         setIsAuthenticated(true);
         console.log("res protectedRoute :",res);

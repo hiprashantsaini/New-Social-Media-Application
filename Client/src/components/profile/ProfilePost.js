@@ -22,7 +22,7 @@ function ProfilePost({ post, postFlag, setPostFlag, userFlag, setUserFlag}) {
 
     const handleDeleteComment = async (commentId) => {
         try {
-            await axios.post(`http://localhost:8080/api/post/deletecomment/${post._id}`, { commentId: commentId }, { withCredentials: true });
+            await axios.post(`https://new-social-media-application.onrender.com/api/post/deletecomment/${post._id}`, { commentId: commentId }, { withCredentials: true });
             setPostFlag(!postFlag);
             setUserFlag(!userFlag);
             toast(`${content.profile.alerts.comment_delete}`);
@@ -34,7 +34,7 @@ function ProfilePost({ post, postFlag, setPostFlag, userFlag, setUserFlag}) {
     //Handle delete post
     const handleDeletePost = async () => {
         try {
-            await axios.delete(`http://localhost:8080/api/post/deletepost/${post._id}`, { withCredentials: true });
+            await axios.delete(`https://new-social-media-application.onrender.com/api/post/deletepost/${post._id}`, { withCredentials: true });
             toast(`${content.profile.alerts.post_delete}`);
             setPostFlag(!postFlag);
             setUserFlag(!userFlag);
@@ -49,7 +49,7 @@ function ProfilePost({ post, postFlag, setPostFlag, userFlag, setUserFlag}) {
     const handleUpdateTitle = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`http://localhost:8080/api/post/updatetitle/${post._id}`, { title: title }, { withCredentials: true });
+            await axios.post(`https://new-social-media-application.onrender.com/api/post/updatetitle/${post._id}`, { title: title }, { withCredentials: true });
             toast(`${content.profile.alerts.update_title}`);
             setTitleStatus(false);
             setPostFlag(!postFlag);
@@ -62,7 +62,7 @@ function ProfilePost({ post, postFlag, setPostFlag, userFlag, setUserFlag}) {
     const handleUpdateDescription = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`http://localhost:8080/api/post/updatedescription/${post._id}`, { description: descriptión }, { withCredentials: true });
+            await axios.post(`https://new-social-media-application.onrender.com/api/post/updatedescription/${post._id}`, { description: descriptión }, { withCredentials: true });
             toast(`${content.profile.alerts.update_description}`);
             setDescriptionStatus(false);
             setPostFlag(!postFlag);

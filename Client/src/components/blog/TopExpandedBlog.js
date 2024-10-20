@@ -31,7 +31,7 @@ function TopExpandedBlog(props) {
     const handleComment = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8080/api/post/addcomment/${post[0]._id}`, {comment },{withCredentials:true});
+            const res = await axios.post(`https://new-social-media-application.onrender.com/api/post/addcomment/${post[0]._id}`, {comment },{withCredentials:true});
             if (res) {
                 setAddedComment(post[0]._id);
                 setComment('');
@@ -58,7 +58,7 @@ function TopExpandedBlog(props) {
     //Follow and unfollow the user
     const handleFollow = async () => {
         try {
-            const res = await axios.post('http://localhost:8080/api/auth/follow', { userId:userId,followedId:post[0].author._id },{withCredentials:true});//userId it is follower. I have to add this in the connection of followedId.
+            const res = await axios.post('https://new-social-media-application.onrender.com/api/auth/follow', { userId:userId,followedId:post[0].author._id },{withCredentials:true});//userId it is follower. I have to add this in the connection of followedId.
             toast(`${content.postcard.alerts.follow_success}  ${post[0].author.name}`);
             setUserInfoFlag(!userInfoFlag);
         } catch (error) {
@@ -68,7 +68,7 @@ function TopExpandedBlog(props) {
    
     const handleUnFollow = async () => {
         try {
-            await axios.post('http://localhost:8080/api/auth/unfollow', { userId:userId,followedId:post[0].author._id },{withCredentials:true});//userId it is follower. I have to add this in the connection of followedId.
+            await axios.post('https://new-social-media-application.onrender.com/api/auth/unfollow', { userId:userId,followedId:post[0].author._id },{withCredentials:true});//userId it is follower. I have to add this in the connection of followedId.
             toast(`${content.postcard.alerts.unfollow_success}  ${post[0].author.name}`);
             setUserInfoFlag(!userInfoFlag);
         } catch (error) {
@@ -91,7 +91,7 @@ function TopExpandedBlog(props) {
 
     const handleLike = async () => {
         try {
-            await axios.get(`http://localhost:8080/api/post/likepost/${post[0]._id}`, {withCredentials:true});
+            await axios.get(`https://new-social-media-application.onrender.com/api/post/likepost/${post[0]._id}`, {withCredentials:true});
             toast(`${content.postcard.alerts.like_success}`);
             setUserInfoFlag(!userInfoFlag);
 
@@ -102,7 +102,7 @@ function TopExpandedBlog(props) {
 
     const handleDisLike = async () => {
         try {
-            await axios.get(`http://localhost:8080/api/post/dislikepost/${post[0]._id}`,{withCredentials:true});
+            await axios.get(`https://new-social-media-application.onrender.com/api/post/dislikepost/${post[0]._id}`,{withCredentials:true});
             toast(`${content.postcard.alerts.dislike_success}`);
             setUserInfoFlag(!userInfoFlag);
 
@@ -127,7 +127,7 @@ function TopExpandedBlog(props) {
             if(transferPoints > userInfo.data?.user?.points){
               return toast("You have not sufficient points");
             }
-            const res = await axios.post('http://localhost:8080/api/auth/transferpoints', {toUserId: post[0].author._id, points: transferPoints },{withCredentials:true});
+            const res = await axios.post('https://new-social-media-application.onrender.com/api/auth/transferpoints', {toUserId: post[0].author._id, points: transferPoints },{withCredentials:true});
             if (res) {
                 toast(`Transferred ${transferPoints} points to ${post[0].author.name}`);
                 setUserInfoFlag(!userInfoFlag);
@@ -142,7 +142,7 @@ function TopExpandedBlog(props) {
     // handle delete comment 
     const handleDeleteComment=async(commentId)=>{
         try {
-            await axios.post(`http://localhost:8080/api/post/deletecomment/${post[0]._id}`,{commentId:commentId},{withCredentials:true});
+            await axios.post(`https://new-social-media-application.onrender.com/api/post/deletecomment/${post[0]._id}`,{commentId:commentId},{withCredentials:true});
             setUserInfoFlag(!userInfoFlag);
             toast(`${content.profile.alerts.comment_delete}`);
         } catch (error) {

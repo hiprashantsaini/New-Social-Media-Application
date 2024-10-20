@@ -22,7 +22,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             console.log(name,email,password,phone)
-            const res=await axios.post('http://localhost:8080/api/auth/signup',{name,email,phone,password},{withCredentials:true});
+            const res=await axios.post('https://new-social-media-application.onrender.com/api/auth/signup',{name,email,phone,password},{withCredentials:true});
             console.log("resv:",res)
             if(res){
                 toast(`${content.sign_up.alerts.register_success}`);

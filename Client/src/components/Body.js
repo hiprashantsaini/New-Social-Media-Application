@@ -15,7 +15,7 @@ const Body = () => {
 
     const getAllPosts = async () => {
         try {
-            const allPosts = await axios.get('http://localhost:8080/api/post/getposts',{withCredentials:true});
+            const allPosts = await axios.get('https://new-social-media-application.onrender.com/api/post/getposts',{withCredentials:true});
             setPosts(allPosts.data.posts)
         } catch (error) {
             toast.error(`${content.postcard.alerts.error_post}`);

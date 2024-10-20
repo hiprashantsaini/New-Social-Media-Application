@@ -19,7 +19,7 @@ const Blog = (props) => {
     const location=useLocation();
     const handleLike = async () => {
         try {
-            const res = await axios.get(`http://localhost:8080/api/post/likepost/${post._id}`,{withCredentials:true});
+            const res = await axios.get(`https://new-social-media-application.onrender.com/api/post/likepost/${post._id}`,{withCredentials:true});
             toast(`${content.postcard.alerts.like_success}`);
             setUserInfoFlag(!userInfoFlag);
 
@@ -32,7 +32,7 @@ const Blog = (props) => {
 
     const handleDisLike = async () => {
         try {
-            const res = await axios.get(`http://localhost:8080/api/post/dislikepost/${post._id}`, { withCredentials:true });
+            const res = await axios.get(`https://new-social-media-application.onrender.com/api/post/dislikepost/${post._id}`, { withCredentials:true });
             toast(`${content.postcard.alerts.dislike_success}`);
             setUserInfoFlag(!userInfoFlag);
 
@@ -83,7 +83,7 @@ const Blog = (props) => {
                             post?.media?.type === 'video' ?
                                 <>
                                     <video controls className='tweet-video'>
-                                        {/* <source src={`http://localhost:8080/uploads/${post.media.url}`} /> */}
+                                        {/* <source src={`https://new-social-media-application.onrender.com/uploads/${post.media.url}`} /> */}
                                         <source src={`${post.media.url}`} />
                                     </video>
                                     <a href="#top-section" style={{ textDecoration: 'none' }}><p className='tweet-title' onClick={() => setExpandBlogId(post._id)}>{post.title}</p> </a>

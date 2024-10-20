@@ -17,8 +17,8 @@ const Subscription=()=>{
 
     const getAllPlans=async()=>{
         try {
-            // const allplans=await axios.post('http://localhost:8080/api/payment/allplans',{userId:userInfo.data?.user?._id},{withCredentials:true});
-            const allplans=await axios.get('http://localhost:8080/api/payment/allplans',{
+            // const allplans=await axios.post('https://new-social-media-application.onrender.com/api/payment/allplans',{userId:userInfo.data?.user?._id},{withCredentials:true});
+            const allplans=await axios.get('https://new-social-media-application.onrender.com/api/payment/allplans',{
                 withCredentials:true
             });
             if(allplans){
@@ -57,7 +57,7 @@ const Subscription=()=>{
             return;
         }
         // creating a new order
-        const result=await axios.post("http://localhost:8080/api/payment/orders",{planId:selectedPlanId});
+        const result=await axios.post("https://new-social-media-application.onrender.com/api/payment/orders",{planId:selectedPlanId});
 
         if(!result){
             toast.error(`${content.subscription.alerts.razorpay_error}`);
@@ -83,7 +83,7 @@ const Subscription=()=>{
                     planId:selectedPlanId,
                     userId:userInfo.data?.user?._id
                 };
-                const result=await axios.post("http://localhost:8080/api/payment/success",data);
+                const result=await axios.post("https://new-social-media-application.onrender.com/api/payment/success",data);
                 setUserInfoFlag(!userInfoFlag)
                 alert(`${result.data.msg}`);
             },

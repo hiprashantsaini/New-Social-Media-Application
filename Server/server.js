@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static('public'));
 
 const corsOptions={
-    origin:'http://localhost:3000',
+    origin: true,
     credentials:true
 }
 app.use(cors(corsOptions));

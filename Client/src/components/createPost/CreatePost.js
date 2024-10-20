@@ -105,7 +105,7 @@ const CreatePost = () => {
       }
 
       console.log("creare Post data:",data);
-      const res = await axios.post('http://localhost:8080/api/post/createpost', {...data},{withCredentials:true});
+      const res = await axios.post('https://new-social-media-application.onrender.com/api/post/createpost', {...data},{withCredentials:true});
       alert(`${res.data?.message}`);
       setUserInfoFlag(!userInfoFlag);
       setTitle('');

@@ -22,7 +22,7 @@ const Login = () => {
     const loginUser = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:8080/api/auth/login', { email,password }, {
+            const res = await axios.post('https://new-social-media-application.onrender.com/api/auth/login', { email,password }, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -33,6 +33,7 @@ const Login = () => {
                 return;
             }
             setUserInfo(res);
+            console.log("res :",res)
             setIsAuthenticated(true);
             alert(`${content.login.alerts.login_success}`)
             setEmail('')

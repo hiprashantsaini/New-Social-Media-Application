@@ -17,7 +17,7 @@ const Header=()=>{
   const handleLanguageChange=async(e)=>{
     e.preventDefault();
     try {
-       await axios.post('http://localhost:8080/api/auth/changelanguage',{language:e.target.value},{withCredentials:true});
+       await axios.post('https://new-social-media-application.onrender.com/api/auth/changelanguage',{language:e.target.value},{withCredentials:true});
 
        setLang(newLang);
        setUserInfoFlag(!userInfoFlag);
@@ -39,7 +39,7 @@ const Header=()=>{
 
   const handleLogout=async()=>{
     try {
-      await axios.get("http://localhost:8080/api/auth/logout",{withCredentials:true});
+      await axios.get("https://new-social-media-application.onrender.com/api/auth/logout",{withCredentials:true});
       toast.success("Logout successfull");
       setIsAuthenticated(false);
       navigate('/');

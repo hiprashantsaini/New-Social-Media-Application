@@ -21,7 +21,7 @@ const Profile = () => {
 
     const findUserInfo = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/auth/profile', { withCredentials: true })
+            const res = await axios.get('https://new-social-media-application.onrender.com/api/auth/profile', { withCredentials: true })
             if (res) {
                 setUserInfo(res);
                 // set plan detail.
@@ -36,7 +36,7 @@ const Profile = () => {
 
     const getAllPosts = async () => {
         try {
-            const allPosts = await axios.get('http://localhost:8080/api/post/getposts', { withCredentials: true });
+            const allPosts = await axios.get('https://new-social-media-application.onrender.com/api/post/getposts', { withCredentials: true });
 
             setPosts(allPosts.data.posts)
         } catch (error) {
@@ -56,7 +56,7 @@ const Profile = () => {
     const handleLanguageChange = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:8080/api/auth/changelanguage', { language: e.target.value }, { withCredentials: true });
+            await axios.post('https://new-social-media-application.onrender.com/api/auth/changelanguage', { language: e.target.value }, { withCredentials: true });
             setLang(newLang);
             //  setUserInfoFlag(!userInfoFlag);
             setUserFlag(!userFlag);
@@ -83,7 +83,7 @@ const Profile = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.get("http://localhost:8080/api/auth/logout", { withCredentials: true });
+            await axios.get("https://new-social-media-application.onrender.com/api/auth/logout", { withCredentials: true });
             toast.success("Logout successfull");
             setIsAuthenticated(false);
             navigate('/');
