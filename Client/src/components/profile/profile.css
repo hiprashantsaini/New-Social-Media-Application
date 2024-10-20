@@ -1,0 +1,254 @@
+.profile-container{
+    width: 100%;
+    font-family: Arial, sans-serif;
+    height: auto;
+    position: relative;
+}
+
+.profile-body{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section{
+    padding: 10px;
+    width: 60%;
+    max-width: 1400px;
+}
+
+.section h2{
+    border-bottom:2px solid var(--profile-header-background);
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+.section p{
+    margin: 10px 0px;
+}
+
+#language-select{
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    background-color: var(--header-background-color);
+}
+
+/* ** Profile post ** */
+
+.post-container{
+    width: 100%;
+
+}
+
+.post-content{
+    width: 100%;
+    margin: 20px 0px;
+    box-shadow: 0 0 10px var(--post-shadow-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post-media{
+    width: 100%;
+    max-height: 340px;
+    display: flex;
+    justify-content: center;
+}
+
+.post-img, .post-video{
+    max-height: 320px;
+    max-width: calc(100% - 10px); /* Because blog-section has 60% width of whole body */
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.post-content p{
+    position: relative;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+.comment-delete-icon{
+    position: absolute;
+    top: -4px;
+    right: -8px;
+}
+
+.comment-delete-icon:hover{
+    color: var(--submit-button-background);
+    cursor: pointer;
+}
+
+.edit-icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.edit-icon:hover{
+    color: var(--button-background);
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+    .section{
+        padding: 10px;
+        width: 90%;
+    }
+
+    .post-media{
+        max-height: 200px;
+    }
+
+    .post-img, .post-video{
+        max-height: 200px;
+        text-align: center;
+        max-width: calc(90%);
+        padding: 10px 0px;
+    }
+}
+
+.profile-otpVerify{
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+    margin: 10px 0px;
+}
+
+.profile-otpVerify input, .profile-otpVerify button{
+    width: 100%;
+    padding: 10px;
+}
+
+.profile-otpVerify input{
+    background-color: var(--input-background-color);
+    color: var(--bold-text-color);
+}
+
+
+.profile-otpVerify button{
+    background-color: var(--submit-button-background);
+    color: var(--submit-button-color);
+    font-weight: 600;
+  cursor: pointer;
+}
+
+.active-otp{
+   display: block;
+  }
+
+.update-title-form{
+    width: 100%;
+    padding: 10px;
+  }
+.update-title-form input{
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.update-title-form button{
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.popUpdelete {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(230, 223, 223, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup{
+    background-color: #fff;
+    width: 380px;
+    /* height: 200px; */
+    padding: 20px;
+    border-radius: 10px;
+} 
+
+
+.profile-header {
+    width: 100%;
+    background: linear-gradient(135deg, #4b79a1 0%, #283e51 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 15px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.profile-nav {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.profile-nav li {
+    list-style: none;
+    margin: 5px 0px;
+}
+
+.profile-nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-nav li a:hover {
+    color: #ffcc00;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+}
+
+.profile-nav li:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.profile-nav li:last-child {
+    color: #ff4b5c;
+    background-color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.profile-nav li:last-child:hover {
+    color: #ffffff;
+    background-color: #ff4b5c;
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+}
