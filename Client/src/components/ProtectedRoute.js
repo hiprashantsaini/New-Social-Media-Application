@@ -15,7 +15,7 @@ const ProtectedRoute = () => {
 
   const getUserProfile = async () => {
     try {
-      const res = await axios.get("https://new-social-media-application.onrender.com/api/auth/profile", { withCredentials: true });
+      const res = await axios.get("https://new-social-media-application.onrender.com/api/auth/profile", { withCredentials : true });
 
       if (res) {
         setIsAuthenticated(true);
