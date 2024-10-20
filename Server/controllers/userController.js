@@ -193,7 +193,7 @@ const changeLanguage = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
-    res.cookie('token', '', { maxAge: 0 }).send({ success: true, message: "Logged out" });
+    res.cookie('token', '',{sameSite:'none',secure:true, maxAge: 0 }).send({ success: true, message: "Logged out" });
   } catch (error) {
     console.log("logout:", error.message);
     res.status(500).send({ status: false, message: "Internal server error..." });
